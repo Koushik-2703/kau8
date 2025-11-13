@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For you — a letter</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body class="letter-page">
+  <main class="letter-center">
+    <div class="paper" role="article" aria-label="Birthday letter">
+      <div class="paper-inner">
+        <h2 class="letter-title">Happy Birthday —</h2>
+
+        <div id="letterText" class="letter-text">
+          <!-- Placeholder confession. Edit this later. -->
+          Hey,
+          <br><br>
+          Today is your 20th — a bright new chapter. I made this small surprise because you're worth little moments that make you smile.
+          <br><br>
+          I won't ask for anything in return. I only want you to know that I wish you joy, strength, and the kind of days that fill your heart. Thank you for the memories we've shared — they matter to me.
+          <br><br>
+          With kindness,
+          <br>
+          — Someone who cares
+        </div>
+        <div class="letter-controls">
+          <a href="index.html" class="small-link">Back to start</a>
+        </div>
+      </div>
+    </div>
+    <audio id="bgMusic" src="song.mp3" loop muted></audio>
+  </main>
+
+  <script>
+    // Small typing effect to make the letter feel gentle
+    (function typing(){
+      const el = document.getElementById('letterText');
+      const full = el.innerHTML;
+      el.innerHTML = '';
+      let i = 0;
+      const speed = 10; // lower is faster
+      function step(){
+        if(i < full.length){
+          el.innerHTML += full.charAt(i);
+          i++;
+          setTimeout(step, speed);
+        }
+      }
+      step();
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
